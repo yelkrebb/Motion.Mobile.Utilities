@@ -1,0 +1,5 @@
+/Development/XamarinApps/XamTest/Motion.Mobile.Utilities/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile78.AssemblyAttribute.cs
+/Development/XamarinApps/XamTest/Motion.Mobile.Utilities/bin/Debug/Motion.Mobile.Utilities.dll.mdb
+/Development/XamarinApps/XamTest/Motion.Mobile.Utilities/bin/Debug/Motion.Mobile.Utilities.dll
+/Development/XamarinApps/XamTest/Motion.Mobile.Utilities/obj/Debug/Motion.Mobile.Utilities.dll
+/Development/XamarinApps/XamTest/Motion.Mobile.Utilities/obj/Debug/Motion.Mobile.Utilities.dll.mdb

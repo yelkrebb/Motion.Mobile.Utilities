@@ -3,6 +3,8 @@ namespace Motion.Mobile.Utilities
 {
 	public class Constants
 	{
+		public const int INT32_BYTE_SIZE = 4;
+
 		private static volatile Constants instance = new Constants();
 		private static object syncRoot = new object();
 
@@ -22,13 +24,33 @@ namespace Motion.Mobile.Utilities
 			}
 		}
 
+		//Devices Brand-model
+		public enum TrioDeviceModel
+		{
+			PE932 = 932,
+			PE936 = 936,
+			PE939 = 939,
+			PE961 = 961,
+			FT900 = 900,
+			FT905 = 905,
+			FT965 = 965,
+			FT969 = 969
+		}
+
+		public enum StriivDeviceModel
+		{
+			
+		}
+
 		//BLE Services
 		public enum ServicesUUID
 		{
 			_FF01, //Trio Custom Service
 			_180A, //Device Information
 			_180F, //Battery Level
-			_1530 //DFU Service
+			_1530, //DFU Service
+
+			_67FE, //Striiv GCP
 		}
 
 		//BLE Characteristics
@@ -46,16 +68,54 @@ namespace Motion.Mobile.Utilities
 
 			//[Battery Service]
 			_2A19, //Battery Level
+
+			//[Striiv]
+			_FE23, //TX (Notify)
+			_9A0A  //RX (Write, Write w/o response
 		}
 
 		//SyncHandler Sequence Names
 		public enum SyncHandlerSequence
 		{
+			Default,
+			EnableFF07,
+			EnableFF08,
 			ReadSerial,
 			ReadModel,
 			ReadFwVersion,
+			ReadBatteryLevel,
 			ReadManufacturer,
-			GetWsDeviceInfo
+			ReadTallies,
+			ReadDeviceInformation,
+			ReadUserSettings,
+			ReadDeviceStatus,
+			ReadDeviceSettings,
+			ReadStepsHeader,
+			ReadHourlySteps,
+			ReadCurrentHour,
+			ReadSignature,
+			ReadSeizureTable,
+			ReadSeizure,
+			WriteStepsHeader,
+			WriteDeviceSettings,
+			WriteUserSettings,
+			WriteExerciseSettings,
+			WriteCompanySettings,
+			WriteSignatureSettings,
+			WriteSeizureSettings,
+			WriteScreenFlow,
+			WriteDeviceSensitivity,
+			WriteDeviceStatus,
+			WriteScreenDisplay,
+			ClearEEProm,
+			WsGetDeviceInfo,
+			WsUploadTallies,
+			WsUploadSteps,
+			WsUploadSignature,
+			WsUploadProfile,
+			WsUnpairDevice,
+			WsUploadSeizure,
+			WsSendNotifySettingsUpdate
 		}
 
 		//Streamlines DB Web Services Method Names
@@ -95,7 +155,12 @@ namespace Motion.Mobile.Utilities
 			ENCRYPT_CREDENTIALS,
 			SINGLE_SIGN_ON,
 			VALIDATE_USER,
+		}
 
+		public enum ScanType
+		{
+			ACTIVATION,
+			SYNCING
 		}
 
 	}
