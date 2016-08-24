@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace Motion.Mobile.Utilities
 {
-	public static class Utilities
+	public static class Utils
 	{
 		public static string StringToHexString(string param)
 		{
@@ -47,7 +47,16 @@ namespace Motion.Mobile.Utilities
 			return CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName (date.Month);
 		}
 
+		public static long getDecimalValue(byte[] byte_param)
+		{
+			long value = 0;
+			for (int i = 0; i < byte_param.Length; i++)
+			{
+				value += (byte_param[i] << (i * 8));
+			}
 
+			return value;
+		}
 
 	}
 }
