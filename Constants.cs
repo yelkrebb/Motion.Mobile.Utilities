@@ -4,6 +4,8 @@ namespace Motion.Mobile.Utilities
 	public class Constants
 	{
 		public const int INT32_BYTE_SIZE = 4;
+		public const int UINT16_BYTE_SIZE = 2;
+		public const int CHAR_BYTE_SIZE = 1;
 
 		private static volatile Constants instance = new Constants();
 		private static object syncRoot = new object();
@@ -37,10 +39,6 @@ namespace Motion.Mobile.Utilities
 			FT969 = 969
 		}
 
-		public enum StriivDeviceModel
-		{
-			
-		}
 
 		//BLE Services
 		public enum ServicesUUID
