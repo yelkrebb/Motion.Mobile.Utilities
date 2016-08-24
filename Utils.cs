@@ -50,12 +50,19 @@ namespace Motion.Mobile.Utilities
 		public static long getDecimalValue(byte[] byte_param)
 		{
 			long value = 0;
+			Array.Reverse(byte_param);
 			for (int i = 0; i < byte_param.Length; i++)
 			{
 				value += (byte_param[i] << (i * 8));
 			}
 
 			return value;
+		}
+
+		public static String ByteArrayToHexString(byte[] data)
+		{
+			string hex = BitConverter.ToString(data);
+			return hex.Replace("-", " ");
 		}
 
 	}

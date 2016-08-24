@@ -7,6 +7,9 @@ namespace Motion.Mobile.Utilities
 		public const int UINT16_BYTE_SIZE = 2;
 		public const int CHAR_BYTE_SIZE = 1;
 
+		public const int INDEX_ZERO = 0;
+		public const int PACKET_BYTE_SIZE = 20;
+
 		private static volatile Constants instance = new Constants();
 		private static object syncRoot = new object();
 
