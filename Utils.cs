@@ -8,6 +8,8 @@ namespace Motion.Mobile.Utilities
 {
 	public static class Utils
 	{
+		public const int INDEX_ONE = 1;
+
 		public static string StringToHexString(string param)
 		{
 			char[] charValues = param.ToCharArray();
@@ -59,6 +61,19 @@ namespace Motion.Mobile.Utilities
 			}
 
 			return value;
+		}
+
+		public static void reverseBytesForEndianessHandling(byte[] byte_param)
+		{
+			byte temp;
+			for (int i = 0; i+1 < byte_param.Length;)
+			{
+				temp = byte_param[i + 1];
+				byte_param[i + 1] = byte_param[i];
+				byte_param[i] = temp;
+				i += 2;
+			}
+
 		}
 
 		public static string ByteArrayToHexString(byte[] data)
