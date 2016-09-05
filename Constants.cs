@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 namespace Motion.Mobile.Utilities
 {
 	public class Constants
@@ -75,6 +75,7 @@ namespace Motion.Mobile.Utilities
 			_9A0A  //RX (Write, Write w/o response
 		}
 
+
 		//SyncHandler Sequence Names
 		public enum SyncHandlerSequence
 		{
@@ -116,7 +117,18 @@ namespace Motion.Mobile.Utilities
 			WsUploadProfile,
 			WsUnpairDevice,
 			WsUploadSeizure,
-			WsSendNotifySettingsUpdate
+			WsSendNotifySettingsUpdate,
+			ActivateDeviceWithMember
+		}
+
+		public enum StriivSyncHandlerSequence
+		{
+			EnableFE23,
+			Ack,
+			RegisterRead,
+			RegisterWrite,
+			FileLoadList,
+			DeviceInfo
 		}
 
 		//Streamlines DB Web Services Method Names
