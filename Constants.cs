@@ -109,6 +109,7 @@ namespace Motion.Mobile.Utilities
 			WriteDeviceSensitivity,
 			WriteDeviceStatus,
 			WriteScreenDisplay,
+			WriteDeviceMode,
 			ClearEEProm,
 			WsGetDeviceInfo,
 			WsUploadTallies,
@@ -118,7 +119,7 @@ namespace Motion.Mobile.Utilities
 			WsUnpairDevice,
 			WsUploadSeizure,
 			WsSendNotifySettingsUpdate,
-			ActivateDeviceWithMember
+			WsActivateDeviceWithMember
 		}
 
 		public enum StriivSyncHandlerSequence
