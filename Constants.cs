@@ -90,14 +90,16 @@ namespace Motion.Mobile.Utilities
 			ReadTallies,
 			ReadDeviceInformation,
 			ReadUserSettings,
+			ReadSeizureSettings,
 			ReadDeviceStatus,
 			ReadDeviceSettings,
 			ReadStepsHeader,
 			ReadHourlySteps,
 			ReadCurrentHour,
 			ReadSignature,
-			ReadSeizureTable,
+			ReadSeizureBlocks,
 			ReadSeizure,
+			ReadSeizureTable,
 			WriteStepsHeader,
 			WriteDeviceSettings,
 			WriteUserSettings,
@@ -119,7 +121,8 @@ namespace Motion.Mobile.Utilities
 			WsUnpairDevice,
 			WsUploadSeizure,
 			WsSendNotifySettingsUpdate,
-			WsActivateDeviceWithMember
+			WsActivateDeviceWithMember,
+			WsUploadCommandResponse
 		}
 
 		public enum StriivSyncHandlerSequence

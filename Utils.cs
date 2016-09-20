@@ -165,8 +165,9 @@ namespace Motion.Mobile.Utilities
 		public static DateTime GetServerDateTimeFromString(string dateTimeString)
 		{
 			string[] serverTimeComponents = dateTimeString.Split(new Char[] { '-', ':', ' ' });
-			int[] dateComponents = new int[6];
+			int[] dateComponents = new int[]{ 0, 0, 0, 0, 0, 0 };
 			int i = 0;
+			Debug.WriteLine("Printing out DateTime Array");
 			foreach (string word in serverTimeComponents)
 			{
 				Debug.WriteLine(word);
@@ -175,7 +176,7 @@ namespace Motion.Mobile.Utilities
 			}
 
 
-			DateTime st = new DateTime(dateComponents[0], dateComponents[1], dateComponents[2], dateComponents[3], dateComponents[4], dateComponents[5]);
+			DateTime st = new DateTime(dateComponents[0] + 2000, dateComponents[1], dateComponents[2], dateComponents[3], dateComponents[4], dateComponents[5]);
 			return st;
 		}
 
@@ -184,6 +185,34 @@ namespace Motion.Mobile.Utilities
 			DateTime unixStart = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
 			long unixTimeStampInTicks = (dateTime.ToUniversalTime() - unixStart).Ticks;
 			return (double)unixTimeStampInTicks / TimeSpan.TicksPerSecond;
+		}
+
+		public static DateTime GetUTCDateWithDate(DateTime dateTime)
+		{ 
+			DateTime utcDate = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, dateTime.Hour, dateTime.Minute, dateTime.Second, System.DateTimeKind.Utc);
+			return utcDate;
+		}
+
+		public static DateTime GetDeviceDateTimeWithFormat(DateTime unformattedDate)
+		{
+			DateTime currentDT = unformattedDate;
+			DateTime dt = new DateTime(currentDT.Year, currentDT.Month, currentDT.Day, currentDT.Hour, currentDT.Minute, currentDT.Second);
+			String.Format("{0:yy-MM-dd HH:mm:ss}", dt);
+			return dt;
+		}
+
+		public static string GetStringDateV1(int year, int month, int day, int hour, int min, int sec)
+		{
+			DateTime dt = new DateTime(year, month, day,hour,min,sec);
+			String.Format("{0:yy-MM-dd HH:mm:ss}", dt);
+			return dt.ToString();
+		}
+
+		public static DateTime GetDateFromDateComponentsV1(int year, int month, int day)
+		{
+			DateTime dt = new DateTime(year, month, day);
+			String.Format("{0:yyyy-MM-dd}", dt);
+			return dt;
 		}
 
 	}
