@@ -145,7 +145,8 @@ namespace Motion.Mobile.Utilities
 		public static string GetDeviceServicesURL()
 		{
 			//Currently return the Model Environment
-			return "https://atl.sync.hattrickmotion.com/api/Pedometer/";
+			//return "https://atl.sync.hattrickmotion.com/api/Pedometer/";
+			return "https://test.savvysherpa.com/DeviceServices/api/Pedometer/";
 		}
 
 		public static int GetCheckSumWithBytes(byte[] data)

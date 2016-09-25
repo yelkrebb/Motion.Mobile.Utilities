@@ -6,6 +6,7 @@ namespace Motion.Mobile.Utilities
 		public const int INT32_BYTE_SIZE = 4;
 		public const int UINT16_BYTE_SIZE = 2;
 		public const int CHAR_BYTE_SIZE = 1;
+		public const int TOTAL_SEIZURE_BLOCKS_PER_RECORD = 32;
 
 		public const int INDEX_ZERO = 0;
 		public const int PACKET_BYTE_SIZE = 20;
@@ -122,7 +123,8 @@ namespace Motion.Mobile.Utilities
 			WsUploadSeizure,
 			WsSendNotifySettingsUpdate,
 			WsActivateDeviceWithMember,
-			WsUploadCommandResponse
+			WsUploadCommandResponse,
+			WsSendAppInfo
 		}
 
 		public enum StriivSyncHandlerSequence
